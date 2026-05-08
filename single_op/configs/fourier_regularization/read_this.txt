@@ -1,0 +1,1 @@
+fourier_regularizaiton directory contains the configs for comparing the RNN's trained using normal weight decay with fourier regularization to establish the speed up in training. We run 10 models configs, using the same hyperparameters as given in the fourier_reg_1 and weight_decay_1 configs. We change the seed from 42-52 to train our 10 models.
