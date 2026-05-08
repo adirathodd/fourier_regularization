@@ -1,0 +1,33 @@
+---
+model:
+  hidden_dim: 151
+  num_layers: 1
+  vocab_size: 151
+  model: ssm # rnn, ssm, transformer
+
+  # SSM only
+  d_model: 151
+  n: 64 
+  l_max: 3 
+  collapse: true
+  
+data:
+  modulo: 151
+  train_frac: 0.3
+  data_seed: 42
+  seq_length: 3 # ssm only
+  operation: multiplication
+
+training:
+  epochs: 4000 
+  lr: 0.005
+  wd: 5e-3
+  betas: [0.9, 0.99]
+  use_scheduler: True
+  lr_decay_interval: 250
+  lr_decay: 0.1
+  save_every: 2000
+
+  # Regularization
+  fourier_regularization: 1 
+  regularization_parameter: 5e-6
