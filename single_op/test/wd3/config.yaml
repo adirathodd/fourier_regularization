@@ -1,0 +1,38 @@
+---
+model:
+  hidden_dim: 256
+  num_layers: 1
+  vocab_size: 79
+  model: transformer # rnn, ssm, transformer
+
+  # Transformer only
+  attention_heads: 16
+
+  # SSM only
+  d_model: 256 # change to 128 from 256
+  d_output: 79
+  n: 64 
+  l_max: 3 
+  collapse: true
+  
+data:
+  modulo: 79
+  train_frac: 0.3
+  data_seed: 44
+  seq_length: 3 # ssm only
+  operation: division
+
+training:
+  epochs: 15000
+  lr: 0.01
+  wd: 1e-4
+  betas: [0.9, 0.99]
+  use_scheduler: false
+  lr_decay_interval: 5000
+  lr_decay: 0.1
+  save_every: 2000
+
+  # Regularization
+  fourier_regularization: 0
+  regularization_parameter: 1e-8
+  activity: 0

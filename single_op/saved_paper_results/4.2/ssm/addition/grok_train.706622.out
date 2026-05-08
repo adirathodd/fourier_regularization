@@ -1,0 +1,48 @@
+Python 3.12.3
+PyTorch version: 2.8.0+cu128
+CUDA available: True
+CUDA version: 12.8
+Device count: 1
+Device object created: cuda
+Tensor created on CPU: cpu
+Successfully moved to CUDA: cuda:0
+CUDA is working!
+Created Modular addition Data
+
+Dataset Information:
+  Modulo: 151
+  Total samples: 22801
+  Train samples: 6840
+  Test samples: 15961
+  Train factor: 0.3
+  Vocabulary size: 152
+
+Sample equations:
+  27 + 114 = 141 (mod 151)
+  58 + 110 = 17 (mod 151)
+  58 + 19 = 77 (mod 151)
+  105 + 76 = 30 (mod 151)
+  8 + 146 = 3 (mod 151)
+SSM(
+  (embedding): Embedding(152, 152)
+  (s4_layer): S4Layer(d_model=152, n=256, l_max=3)
+  (bn): BatchNorm1d(152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (activation): ReLU()
+  (fc): Linear(in_features=152, out_features=152, bias=True)
+)
+Using Cross-Entropy Loss
+Starting training for 5000 epochs...
+Model reached 99.9% test accuracy at epoch 1394
+Training completed!
+Accuracy on entire dataset: 99.86842682338494% 
+	 Train set accuracy: 100.0% 
+	 Test set accuracy: 99.81204185201429%
+Frequency Indices: [ -1  18  19  23  28  34  35  56  57  96  97 104 105 106 122 123]
+=== Fourier Spectrum Analysis Report ===
+
+1. Model performance:
+Accuracy on entire dataset: 99.86842682338494% 
+	 Train set accuracy: 100.0% 
+	 Test set accuracy: 99.81204185201429%
+2. Generating fourier coefficient analysis plots
+Finished all experiments

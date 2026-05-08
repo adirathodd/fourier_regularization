@@ -1,0 +1,82 @@
+Python 3.12.3
+PyTorch version: 2.8.0+cu128
+CUDA available: True
+CUDA version: 12.8
+Device count: 1
+Device object created: cuda
+Tensor created on CPU: cpu
+Successfully moved to CUDA: cuda:0
+CUDA is working!
+Created Modular addition Data
+
+Dataset Information:
+  Modulo: 1013
+  Total samples: 1026169
+  Train samples: 307850
+  Test samples: 718319
+  Train factor: 0.3
+  Vocabulary size: 1014
+
+Sample equations:
+  622 + 633 = 242 (mod 1013)
+  896 + 476 = 359 (mod 1013)
+  166 + 227 = 393 (mod 1013)
+  767 + 124 = 891 (mod 1013)
+  737 + 54 = 791 (mod 1013)
+TransformerModel(
+  (embedding): Embedding(1014, 256)
+  (pos_embedding): Embedding(128, 256)
+  (encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=512, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (linear2): Linear(in_features=512, out_features=256, bias=True)
+        (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (ln_out): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+  (dropout): Dropout(p=0.0, inplace=False)
+  (fc): Linear(in_features=256, out_features=1014, bias=False)
+)
+Using Cross-Entropy Loss w/ regularization term on W_e
+Starting training for 7500 epochs...
+Training completed!
+Accuracy on entire dataset: 0.09871668311944717% 
+	 Train set accuracy: 0.1140165665096638% 
+	 Test set accuracy: 0.09215961153749239%
+Frequency Indices: []
+=== Fourier Spectrum Analysis Report ===
+
+1. Model performance:
+Accuracy on entire dataset: 0.09871668311944717% 
+	 Train set accuracy: 0.1140165665096638% 
+	 Test set accuracy: 0.09215961153749239%
+2. Generating fourier coefficient analysis plots
+
+3. Generating Weight SVD spectrum plots
+Expected vocab size: 1013, Actual embedding dim: 256
+Operation: Addition, Includes zero: True
+Fraction of Variance in significant components for Addition:
+Embedding Weights, 0 components: 0.0000
+Unembedding Weights, 0 components: 0.0000
+
+4. Performing SVD ablation analysis
+Accuracy after ablating insignificant components (Addition): 0.10%
+Accuracy after ablating all significant components (Addition): 0.10%
+
+5. Performing fourier component ablation analysis
+Fourier ablation analysis for Addition:
+
+6. Trigonometric Identity Verification:
+Verifying trigonometric identities:
+
+=== Analysis Complete ===
+Finished all experiments

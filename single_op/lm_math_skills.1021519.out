@@ -1,0 +1,314 @@
+Python 3.12.3
+Running main.py on folder: fr1
+PyTorch version: 2.8.0+cu128
+CUDA available: True
+CUDA version: 12.8
+Device count: 1
+Device object created: cuda
+Tensor created on CPU: cpu
+Successfully moved to CUDA: cuda:0
+CUDA is working!
+Created Modular division Data
+
+Dataset Information:
+  Modulo: 79
+  Total samples: 6084
+  Train samples: 1825
+  Test samples: 4259
+  Train factor: 0.3
+  Vocabulary size: 79
+
+Sample equations:
+  47 ÷ 19 = 69 (mod 79)
+  55 ÷ 76 = 8 (mod 79)
+  31 ÷ 35 = 37 (mod 79)
+  55 ÷ 8 = 76 (mod 79)
+  14 ÷ 57 = 64 (mod 79)
+TransformerModel(
+  (embedding): Embedding(79, 256)
+  (pos_embedding): Embedding(128, 256)
+  (encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=512, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (linear2): Linear(in_features=512, out_features=256, bias=True)
+        (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (ln_out): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+  (dropout): Dropout(p=0.0, inplace=False)
+  (fc): Linear(in_features=256, out_features=79, bias=False)
+)
+Using Cross-Entropy Loss w/ regularization term on W_e
+Starting training for 15000 epochs...
+Training completed!
+Accuracy on entire dataset: 46.860618014464166% 
+	 Train set accuracy: 100.0% 
+	 Test set accuracy: 24.090162009861473%
+Frequency Indices: [-1  4  5 41 44 45 60 61 64]
+=== Fourier Spectrum Analysis Report ===
+
+1. Model performance:
+Accuracy on entire dataset: 46.860618014464166% 
+	 Train set accuracy: 100.0% 
+	 Test set accuracy: 24.090162009861473%
+2. Generating fourier coefficient analysis plots
+
+3. Generating Weight SVD spectrum plots
+Expected vocab size: 78, Actual embedding dim: 79
+Operation: Division, Includes zero: False
+Fraction of Variance in significant components for Division:
+Embedding Weights, 8 components: 0.4141
+Unembedding Weights, 8 components: 0.4141
+
+4. Performing SVD ablation analysis
+Accuracy after ablating insignificant components (Division): 28.63%
+Accuracy after ablating all significant components (Division): 1.48%
+
+5. Performing fourier component ablation analysis
+Fourier ablation analysis for Division:
+  Accuracy after ablating:
+    Only Freq 1: 8.38%
+    Until Freq 1: 8.38%
+  Accuracy after ablating:
+    Only Freq 2: 2.83%
+    Until Freq 2: 1.82%
+  Accuracy after ablating:
+    Only Freq 3: 11.65%
+    Until Freq 3: 1.38%
+  Accuracy after ablating:
+    Only Freq 4: 29.04%
+    Until Freq 4: 1.28%
+
+6. Trigonometric Identity Verification:
+Verifying trigonometric identities:
+		 Relative Error for components ('cos 3', 'sin 3'): 2.87E-02
+		 Relative Error for components ('sin 21', 'cos 23'): 1.00E+00
+		 Relative Error for components ('sin 23', 'cos 31'): 1.02E+00
+		 Relative Error for components ('sin 31', 'cos 33'): 1.71E+00
+
+=== Analysis Complete ===
+Running main.py on folder: fr2
+PyTorch version: 2.8.0+cu128
+CUDA available: True
+CUDA version: 12.8
+Device count: 1
+Device object created: cuda
+Tensor created on CPU: cpu
+Successfully moved to CUDA: cuda:0
+CUDA is working!
+Created Modular division Data
+
+Dataset Information:
+  Modulo: 79
+  Total samples: 6084
+  Train samples: 1825
+  Test samples: 4259
+  Train factor: 0.3
+  Vocabulary size: 79
+
+Sample equations:
+  13 ÷ 5 = 50 (mod 79)
+  19 ÷ 44 = 13 (mod 79)
+  52 ÷ 64 = 65 (mod 79)
+  76 ÷ 44 = 52 (mod 79)
+  47 ÷ 22 = 56 (mod 79)
+TransformerModel(
+  (embedding): Embedding(79, 256)
+  (pos_embedding): Embedding(128, 256)
+  (encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=512, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (linear2): Linear(in_features=512, out_features=256, bias=True)
+        (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (ln_out): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+  (dropout): Dropout(p=0.0, inplace=False)
+  (fc): Linear(in_features=256, out_features=79, bias=False)
+)
+Using Cross-Entropy Loss w/ regularization term on W_e
+Starting training for 15000 epochs...
+Training completed!
+Accuracy on entire dataset: 9.812623274161735% 
+	 Train set accuracy: 20.82191780821918% 
+	 Test set accuracy: 5.095092744775769%
+Frequency Indices: [-1 35 74 75]
+=== Fourier Spectrum Analysis Report ===
+
+1. Model performance:
+Accuracy on entire dataset: 9.812623274161735% 
+	 Train set accuracy: 20.82191780821918% 
+	 Test set accuracy: 5.095092744775769%
+2. Generating fourier coefficient analysis plots
+
+3. Generating Weight SVD spectrum plots
+Expected vocab size: 78, Actual embedding dim: 79
+Operation: Division, Includes zero: False
+Fraction of Variance in significant components for Division:
+Embedding Weights, 3 components: 0.2461
+Unembedding Weights, 3 components: 0.2461
+
+4. Performing SVD ablation analysis
+Accuracy after ablating insignificant components (Division): 9.50%
+Accuracy after ablating all significant components (Division): 1.45%
+
+5. Performing fourier component ablation analysis
+Fourier ablation analysis for Division:
+  Accuracy after ablating:
+    Only Freq 1: 1.92%
+    Until Freq 1: 1.92%
+
+6. Trigonometric Identity Verification:
+Verifying trigonometric identities:
+		 Relative Error for components ('sin 18', 'cos 38'): 1.00E+00
+
+=== Analysis Complete ===
+Running main.py on folder: fr3
+PyTorch version: 2.8.0+cu128
+CUDA available: True
+CUDA version: 12.8
+Device count: 1
+Device object created: cuda
+Tensor created on CPU: cpu
+Successfully moved to CUDA: cuda:0
+CUDA is working!
+Created Modular division Data
+
+Dataset Information:
+  Modulo: 79
+  Total samples: 6084
+  Train samples: 1825
+  Test samples: 4259
+  Train factor: 0.3
+  Vocabulary size: 79
+
+Sample equations:
+  28 ÷ 59 = 46 (mod 79)
+  55 ÷ 73 = 4 (mod 79)
+  46 ÷ 22 = 38 (mod 79)
+  25 ÷ 55 = 22 (mod 79)
+  64 ÷ 14 = 61 (mod 79)
+TransformerModel(
+  (embedding): Embedding(79, 256)
+  (pos_embedding): Embedding(128, 256)
+  (encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=512, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (linear2): Linear(in_features=512, out_features=256, bias=True)
+        (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (ln_out): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+  (dropout): Dropout(p=0.0, inplace=False)
+  (fc): Linear(in_features=256, out_features=79, bias=False)
+)
+Using Cross-Entropy Loss w/ regularization term on W_e
+Starting training for 15000 epochs...
+Training completed!
+Accuracy on entire dataset: 1.282051282051282% 
+	 Train set accuracy: 4.273972602739726% 
+	 Test set accuracy: 0.0%
+Frequency Indices: []
+=== Fourier Spectrum Analysis Report ===
+
+1. Model performance:
+Accuracy on entire dataset: 1.282051282051282% 
+	 Train set accuracy: 4.273972602739726% 
+	 Test set accuracy: 0.0%
+2. Generating fourier coefficient analysis plots
+
+3. Generating Weight SVD spectrum plots
+Expected vocab size: 78, Actual embedding dim: 79
+Operation: Division, Includes zero: False
+Fraction of Variance in significant components for Division:
+Embedding Weights, 0 components: 0.0000
+Unembedding Weights, 0 components: 0.0000
+
+4. Performing SVD ablation analysis
+Accuracy after ablating insignificant components (Division): 1.28%
+Accuracy after ablating all significant components (Division): 1.28%
+
+5. Performing fourier component ablation analysis
+Fourier ablation analysis for Division:
+
+6. Trigonometric Identity Verification:
+Verifying trigonometric identities:
+
+=== Analysis Complete ===
+Running main.py on folder: wd1
+PyTorch version: 2.8.0+cu128
+CUDA available: True
+CUDA version: 12.8
+Device count: 1
+Device object created: cuda
+Tensor created on CPU: cpu
+Successfully moved to CUDA: cuda:0
+CUDA is working!
+Created Modular division Data
+
+Dataset Information:
+  Modulo: 79
+  Total samples: 6084
+  Train samples: 1825
+  Test samples: 4259
+  Train factor: 0.3
+  Vocabulary size: 79
+
+Sample equations:
+  47 ÷ 19 = 69 (mod 79)
+  55 ÷ 76 = 8 (mod 79)
+  31 ÷ 35 = 37 (mod 79)
+  55 ÷ 8 = 76 (mod 79)
+  14 ÷ 57 = 64 (mod 79)
+TransformerModel(
+  (embedding): Embedding(79, 256)
+  (pos_embedding): Embedding(128, 256)
+  (encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=512, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (linear2): Linear(in_features=512, out_features=256, bias=True)
+        (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.0, inplace=False)
+        (dropout2): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (ln_out): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+  (dropout): Dropout(p=0.0, inplace=False)
+  (fc): Linear(in_features=256, out_features=79, bias=False)
+)
+Using Cross-Entropy Loss
+Starting training for 15000 epochs...
