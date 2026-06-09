@@ -32,11 +32,30 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Quickstart
+The repository is divided into two parts - single op and multi op experiments.
+The single op directory contains code & configs to run experiments for:
+- Single operations (addition, subtraction, multiplication, division) for RNNs, Transformers, and SSMs
+- Fourier regularized vs. weight decay models
+
+All other experiments (namely, multiple operations with transformers) belong to the multi op directory.
+
+## Quickstart (Single-Op)
+
+### 1. Train and analyze model
+
+```bash
+cd single_op
+python main.py --verbose -p "./<folder-containing-config>" -t -a
+```
+
+(See /single_op/configs for example config.yaml files to train on)
+
+## Quickstart (Multi-Op)
 
 ### 1. Train a model
 
 ```bash
+cd multi_op
 python3 main.py -t -o addition -m transformer
 ```
 
